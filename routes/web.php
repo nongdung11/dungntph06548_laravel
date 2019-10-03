@@ -11,9 +11,21 @@
 |
 */
 
-Route::get('/{tenNguoiDung?}', function ($tenNguoiDung = 'abc') {
-	dd($tenNguoiDung);
+Route::get('/', function () {
     return view('welcome');
 
 });
-Route::view('link','welcome');
+
+Route::get('starter', function () {
+	$users= factory(App\Models\User::class, 10)
+	->make()
+	->toArray();
+	return view('starter',['users'=> $users]);
+});
+
+Route::get('post', function () {
+	$posts = factory(App\Models\Post::class, 10)
+	->make()
+	->toArray();
+    return view('post', ['posts' => $posts]);
+});
