@@ -18,7 +18,7 @@
     <!-- Main content -->
     <section class="content container-fluid">
    
-    <form action="{{ route('store') }}" method="POST">
+    <form action="{{ route('comments.store') }}" method="POST">
     @csrf
       <div class="form-group">
           <label class="form-label">Post_id</label>
@@ -40,7 +40,7 @@
       <button class="btn btn-success">Submit</button>
 
     </form>
-    <form action="{{route('index')}}">
+    <form action="{{route('comments.index')}}">
       @csrf
       <div class="form-group">
         <button class="btn btn-danger">Cancel</button>

@@ -18,7 +18,7 @@
     <!-- Main content -->
     <section class="content container-fluid">
    
-    <form action="{{ route('store') }}" method="POST">
+    <form action="{{ route('categories.store') }}" method="POST">
     @csrf
       <div class="form-group">
         <label class="form-label" >User_id</label>
@@ -32,7 +32,7 @@
       <button class="btn btn-success">Submit</button>
 
     </form>
-    <form action="{{route('index')}}">
+    <form action="{{route('categories.index')}}">
       @csrf
       <div class="form-group">
         <button class="btn btn-danger">Cancel</button>

@@ -17,7 +17,7 @@
         <!-- Main content -->
         <section class="content container-fluid">
 
-            <form action="{{ url('/update/' . $post->id ) }}" method="POST">
+            <form action="{{ url('posts/update/' . $post->id ) }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="title" class="form-label">Title</label>
@@ -38,7 +38,7 @@
 
                 <button class="btn btn-primary">Submit</button>
             </form>
-            <form action="{{route('index')}}">
+            <form action="{{route('posts.index')}}">
             @csrf
                 <div class="form-group">
                     <button class="btn btn-danger">Cancel</button>

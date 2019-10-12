@@ -48,7 +48,7 @@ class CategoryController extends Controller
         'user_id' =>$data['user_id'],
         'name' => $data['name'],
     ]);
-    return redirect()->route('index');
+    return redirect()->route('categories.index');
     }
 
     /**
@@ -93,7 +93,7 @@ class CategoryController extends Controller
         'user_id' => $request->user_id,
         'name' => $request->name,
     ]);
-    return redirect()->route('index');
+    return redirect()->route('categories.index');
     }
 
     /**
@@ -108,6 +108,6 @@ class CategoryController extends Controller
         
     $category->delete();
     
-    return redirect()->route('index');
+    return redirect()->route('categories.index');
     }
 }

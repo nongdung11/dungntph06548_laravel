@@ -19,7 +19,7 @@
     <section class="content container-fluid">
 
    
-    <form action="{{ route('store') }}" method="POST">
+    <form action="{{ route('posts.store') }}" method="POST">
     @csrf
       <div class="form-group">
           <label class="form-label">Title</label>
@@ -41,7 +41,7 @@
       <button class="btn btn-success">Submit</button>
 
     </form>
-    <form action="{{route('index')}}">
+    <form action="{{route('posts.index')}}">
       @csrf
       <div class="form-group">
         <button class="btn btn-danger">Cancel</button>

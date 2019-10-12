@@ -6,8 +6,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Page Header
-        <small>Optional description</small>
+        Post
+        <small>Post</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -27,7 +27,7 @@
           <th>Name</th>
           <th>User_id</th>
           <th>Category_id</th>
-            <th><a href="{{route('create')}}" class="btn btn-success">Create</a></th>
+            <th><a href="{{route('posts.create')}}" class="btn btn-success">Create</a></th>
 
         </thead>
         <tbody>
@@ -40,11 +40,11 @@
               <td>{{$post['user_id']}}</td>
               <td>{{$post['category_id']}}</td>
               <td>
-                  <a href="{{ route('show',['id'=>$post['id']]) }}" class="btn btn-success">Details</a>
+                  <a href="{{ route('posts.show',['id'=>$post['id']]) }}" class="btn btn-success">Details</a>
                </td>
-              <td><a href="{{ route('edit',['id'=>$post['id']]) }}" class="btn btn-primary">Update</a></td>
+              <td><a href="{{ route('posts.edit',['id'=>$post['id']]) }}" class="btn btn-primary">Update</a></td>
               <td>                  
-                <form action="{{ route('delete',['id'=>$post['id']]) }}" method="POST">
+                <form action="{{ route('posts.delete',['id'=>$post['id']]) }}" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-danger">Delete</button>
                   </form>

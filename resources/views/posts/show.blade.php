@@ -39,7 +39,7 @@
                 </div>              
 
             </form>
-            <form action="{{route('index')}}">
+            <form action="{{route('posts.index')}}">
             @csrf
                 <div class="form-group">
                     <button class="btn btn-danger">Back</button>

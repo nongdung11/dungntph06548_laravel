@@ -49,7 +49,7 @@ class CommentController extends Controller
         'user_id' =>$data['user_id'],
         'is_active' => $data['is_active'],
     ]);
-    return redirect()->route('index');
+    return redirect()->route('comments.index');
     }
 
     /**
@@ -96,7 +96,7 @@ class CommentController extends Controller
         'user_id' => $request->user_id,
         'is_active' =>$request->is_active,
     ]);
-    return redirect()->route('index');
+    return redirect()->route('comments.index');
     }
 
     /**
@@ -111,6 +111,6 @@ class CommentController extends Controller
         
     $comment->delete();
     
-    return redirect()->route('index');
+    return redirect()->route('comments.index');
     }
 }

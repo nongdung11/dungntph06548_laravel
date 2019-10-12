@@ -38,7 +38,7 @@
 
                 <button class="btn btn-primary">Submit</button>
             </form>
-            <form action="{{route('index')}}">
+            <form action="{{route('comments.index')}}">
             @csrf
                 <div class="form-group">
                     <button class="btn btn-danger">Cancel</button>

@@ -51,7 +51,7 @@ class PostController extends Controller
         'category_id' => $data['category_id'],
         'user_id' =>$data['user_id'],
     ]);
-    return redirect()->route('index');
+    return redirect()->route('posts.index');
     }
 
     /**
@@ -98,7 +98,7 @@ class PostController extends Controller
         'category_id' =>$request->category_id,
         'user_id' => $request->user_id,
     ]);
-    return redirect()->route('index');
+    return redirect()->route('posts.index');
     }
 
     /**
@@ -113,6 +113,6 @@ class PostController extends Controller
         
     $post->delete();
     
-    return redirect()->route('index');
+    return redirect()->route('posts.index');
     }
 }

@@ -2,6 +2,8 @@
 
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Comment;
+use App\Models\Category;
 use Faker\Generator as Faker;
 use Illuminate\Http\Request;
 
@@ -37,64 +39,47 @@ Route::get('login','AuthController@getLoginForm')->name('auth.login_form');
 Route::post('login','AuthController@LoginForm')->name('auth.login');
 
 
-Route::group( [
-	'prefix' => 'posts',
-	'name' => 'posts.',
-] , function () 
-{ 
-Route::get('/' , 'PostController@index')->name('index');
+Route::get('posts' , 'PostController@index')->name('posts.index');
 
-Route::get('create' , 'PostController@create')->name('create');
+Route::get('posts/create' , 'PostController@create')->name('posts.create');
 
-Route::post('store', 'PostController@store' )->name('store');
+Route::post('posts/store', 'PostController@store' )->name('posts.store');
 
-Route::get('edit/{id}', 'PostController@edit')->name('edit');
+Route::get('posts/edit/{id}', 'PostController@edit')->name('posts.edit');
 
-Route::post('update/{id}','PostController@update')->name('update');
+Route::post('posts/update/{id}','PostController@update')->name('posts.update');
 
-Route::get('{id}', 'PostController@show')->name('show');
+Route::get('posts/{id}', 'PostController@show')->name('posts.show');
 
-Route::post('delete/{id}' , 'PostController@destroy')->name('delete');
+Route::post('posts/delete/{id}' , 'PostController@destroy')->name('posts.delete');
 
-});
 
-Route::group( [
-	'prefix' => 'comments',
-	'name' => 'comments.',
-] , function () 
-{ 
-Route::get('/' , 'CommentController@index')->name('comments.index');
+Route::get('comments' , 'CommentController@index')->name('comments.index');
 
-Route::get('create' , 'CommentController@create')->name('create');
+Route::get('comments/create' , 'CommentController@create')->name('comments.create');
 
-Route::post('store', 'CommentController@store' )->name('store');
+Route::post('comments/store', 'CommentController@store' )->name('comments.store');
 
-Route::get('edit/{id}', 'CommentController@edit')->name('edit');
+Route::get('comments/edit/{id}', 'CommentController@edit')->name('comments.edit');
 
-Route::post('update/{id}','CommentController@update')->name('update');
+Route::post('comments/update/{id}','CommentController@update')->name('comments.update');
 
-Route::get('{id}', 'CommentController@show')->name('show');
+Route::get('comments/{id}', 'CommentController@show')->name('comments.show');
 
-Route::post('delete/{id}' , 'CommentController@destroy')->name('delete');
-});
+Route::post('delete/{id}' , 'CommentController@destroy')->name('comments.delete');
 
-Route::group( [
-	'prefix' => 'categories',
-	'name' => 'categories.',
-] , function () 
-{ 
+//Route Category
 
-Route::get('/' , 'CategoryController@index')->name('index');
+Route::get('categories' , 'CategoryController@index')->name('categories.index');
 
-Route::get('create' , 'CategoryController@create')->name('create');
+Route::get('categories/create' , 'CategoryController@create')->name('categories.create');
 
-Route::post('store', 'CategoryController@store' )->name('store');
+Route::post('categories/store', 'CategoryController@store' )->name('categories.store');
 
-Route::get('edit/{id}', 'CategoryController@edit')->name('edit');
+Route::get('categories/edit/{id}', 'CategoryController@edit')->name('categories.edit');
 
-Route::post('update/{id}','CategoryController@update')->name('update');
+Route::post('categories/update/{id}','CategoryController@update')->name('categories.update');
 
-Route::get('{id}', 'CategoryController@show')->name('show');
+Route::get('categories/{id}', 'CategoryController@show')->name('categories.show');
 
-Route::post('delete/{id}' , 'CategoryController@destroy')->name('delete');
-});
+Route::post('categories/delete/{id}' , 'CategoryController@destroy')->name('categories.delete');
