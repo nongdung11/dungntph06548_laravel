@@ -22,18 +22,35 @@
       @else
         <table class="table">
           <thead>
+            <th>ID</th>
             <th>Name</th>
-            <th>Address</th>
             <th>Email</th>
+            <th>PhoneNumber</th>
             <th>BirthDay</th>
+            <th>Posts</th> 
+            <th><a href="{{route('create')}}" class="btn btn-success">Create</a></th>
+
           </thead>
           <tbody>
+
             @foreach($users as $user)
             <tr>
-              <td>{{$user['name']}}</td>
-              <td>{{$user['address']}}</td>
-              <td>{{$user['email']}}</td>
-              <td>{{$user['birthday']}}</td>
+               <td>{{ $user['id']}}</td>
+               <td>{{ $user['name']}}</td>
+               <td>{{ $user['email']}}</td>
+               <td>{{ $user['phonenumber']}}</td>
+               <td>{{ $user['birthday']}}</td>
+               <td>{{ count($user['posts'])}}</td>
+               <td>
+                  <a href="{{ route('show',['id'=>$user['id']]) }}" class="btn btn-success">Details</a>
+               </td>
+              <td><a href="{{ route('edit',['id'=>$user['id']]) }}" class="btn btn-primary">Update</a></td>
+              <td>                  
+                <form action="{{ route('delete',['id'=>$user['id']]) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
+                </td>
             </tr>
             @endforeach
           </tbody>

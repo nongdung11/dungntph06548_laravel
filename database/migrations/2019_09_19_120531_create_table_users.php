@@ -17,8 +17,11 @@ class CreateTableUsers extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->date('birthday');
+            $table->string('phonenumber');
             $table->string('email');
             $table->string('password');
+            $table->enum('role',['admin','user']);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
